@@ -1,0 +1,171 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 42 100% 98%; /* #FFF8F0 */
+  --foreground: 30 20% 9%; /* #1A0F0A */
+  --card: 0 0% 100%;
+  --card-foreground: 30 20% 9%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 30 20% 9%;
+  --primary: 28 46% 27%; /* #654321 */
+  --primary-foreground: 0 0% 98%;
+  --secondary: 42 100% 98%;
+  --secondary-foreground: 30 20% 9%;
+  --muted: 42 19% 95%; /* #F5F5DC */
+  --muted-foreground: 30 15% 45%;
+  --accent: 35 39% 71%; /* #DEB887 */
+  --accent-foreground: 30 20% 9%;
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 0 0% 98%;
+  --border: 35 39% 71%;
+  --input: 35 39% 71%;
+  --ring: 28 46% 27%;
+  --radius: 0.5rem;
+  
+  /* Coffee theme colors */
+  --coffee-50: 42 100% 98%; /* #FFF8F0 */
+  --coffee-100: 42 19% 95%; /* #F5F5DC */
+  --coffee-200: 35 39% 71%; /* #DEB887 */
+  --coffee-300: 30 59% 53%; /* #CD853F */
+  --coffee-400: 28 73% 46%; /* #D2691E */
+  --coffee-500: 28 46% 27%; /* #8B4513 */
+  --coffee-600: 28 46% 20%; /* #654321 */
+  --coffee-700: 30 34% 16%; /* #2C1810 */
+  --coffee-800: 30 20% 9%; /* #1A0F0A */
+  --coffee-900: 30 17% 5%; /* #0F0805 */
+}
+
+.dark {
+  --background: 30 20% 9%;
+  --foreground: 42 100% 98%;
+  --card: 30 20% 9%;
+  --card-foreground: 42 100% 98%;
+  --popover: 30 20% 9%;
+  --popover-foreground: 42 100% 98%;
+  --primary: 35 39% 71%;
+  --primary-foreground: 30 20% 9%;
+  --secondary: 30 34% 16%;
+  --secondary-foreground: 42 100% 98%;
+  --muted: 30 34% 16%;
+  --muted-foreground: 35 39% 71%;
+  --accent: 30 34% 16%;
+  --accent-foreground: 42 100% 98%;
+  --destructive: 0 62% 30%;
+  --destructive-foreground: 0 0% 98%;
+  --border: 30 34% 16%;
+  --input: 30 34% 16%;
+  --ring: 35 39% 71%;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: 'Playfair Display', serif;
+  }
+  
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+  }
+  
+  .animate-slide-up {
+    animation: slideUp 0.8s ease-out forwards;
+  }
+  
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+  
+  /* Coffee theme utility classes */
+  .bg-coffee-50 { background-color: hsl(var(--coffee-50)); }
+  .bg-coffee-100 { background-color: hsl(var(--coffee-100)); }
+  .bg-coffee-200 { background-color: hsl(var(--coffee-200)); }
+  .bg-coffee-300 { background-color: hsl(var(--coffee-300)); }
+  .bg-coffee-400 { background-color: hsl(var(--coffee-400)); }
+  .bg-coffee-500 { background-color: hsl(var(--coffee-500)); }
+  .bg-coffee-600 { background-color: hsl(var(--coffee-600)); }
+  .bg-coffee-700 { background-color: hsl(var(--coffee-700)); }
+  .bg-coffee-800 { background-color: hsl(var(--coffee-800)); }
+  .bg-coffee-900 { background-color: hsl(var(--coffee-900)); }
+  
+  .text-coffee-50 { color: hsl(var(--coffee-50)); }
+  .text-coffee-100 { color: hsl(var(--coffee-100)); }
+  .text-coffee-200 { color: hsl(var(--coffee-200)); }
+  .text-coffee-300 { color: hsl(var(--coffee-300)); }
+  .text-coffee-400 { color: hsl(var(--coffee-400)); }
+  .text-coffee-500 { color: hsl(var(--coffee-500)); }
+  .text-coffee-600 { color: hsl(var(--coffee-600)); }
+  .text-coffee-700 { color: hsl(var(--coffee-700)); }
+  .text-coffee-800 { color: hsl(var(--coffee-800)); }
+  .text-coffee-900 { color: hsl(var(--coffee-900)); }
+  
+  .border-coffee-100 { border-color: hsl(var(--coffee-100)); }
+  .border-coffee-200 { border-color: hsl(var(--coffee-200)); }
+  .border-coffee-300 { border-color: hsl(var(--coffee-300)); }
+  .border-coffee-400 { border-color: hsl(var(--coffee-400)); }
+  .border-coffee-500 { border-color: hsl(var(--coffee-500)); }
+  .border-coffee-600 { border-color: hsl(var(--coffee-600)); }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--coffee-100));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--coffee-400));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--coffee-500));
+}
